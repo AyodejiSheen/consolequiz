@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="PName"/>
+    <input type="text" id="sex"/>
+    <input type="text" id="age"/>
+
+    <button onclick="savePerson()"> SAVE </button>
+
+
+    <br>
+    <br>
+    <div id="displayPerson">
+
+    </div>
+<!-- 
+    <h2>Login</h2>
+    <input type="text" id="gooos"/> -->
+
+    <button onclick="Loginbtn()">Login</button>
+
+
+
+    <input type="text" id="gooos"/>
+
+    <button onclick="goos()">goi</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        var Person = [];
+
+
+        // let goods = gooos.value;
+        // 
+
+
+savePerson = () => {
+
+
+    // console.log(inputname);
+
+    var ObjPerson = {
+            personName : PName.value,
+            sex : sex.value,
+            Age : age.value
+        };
+
+
+    Person.push(ObjPerson);
+
+    // console.log(Person);
+    
+    // console.log('i am clicked');
+
+
+
+    for (let i = 0; i < Person.length; i++){
+
+displayPerson.innerHTML += `<div>
+
+                            <p>Name:  ${Person[i].personName}</p>
+                            <p>Sex:  ${Person[i].sex}</p>
+                            <p>Age:   ${Person[i].Age}</p>
+                            
+                            </div>`;
+
+
+}
+
+
+
+
+let details = JSON.stringify(Person);
+localStorage.setItem('Someone', details);
+
+
+
+}
+
+
+        
+Loginbtn = () => {
+    let goods = gooos.value;
+    let getdetails = localStorage.getItem('Someone');
+    let meme = JSON.parse(getdetails);
+
+
+    console.log(meme);
+
+            meme.find(std => {
+
+            if(goods == std.personName){
+               
+                console.log("welcome");
+                
+            }else{
+               
+                console.log("not welcome");
+        
+            }
+
+
+
+    });
+
+
+
+    // console.log(findname);
+
+    // meme.find(per =>{
+    //     if (per.personName == "Adeyemi"){
+    //         console.log('welcome');
+    //     }else{
+    //         console.log("not registered");
+    //     };
+
+    // });
+
+
+}
+
+
+
+goos = () => {
+
+    let goods = gooos.value;
+
+
+
+    console.log(goods);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
